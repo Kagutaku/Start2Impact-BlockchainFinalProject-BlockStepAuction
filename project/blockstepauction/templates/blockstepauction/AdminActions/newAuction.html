@@ -1,0 +1,19 @@
+{% extends 'blockstepauction/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 class="display-4 my-4 text-center">Create new auction</h1>
+
+    <div class="input-group mb-3 my-4 container d-flex justify-content-center">
+        <form method="POST" class="post-form">{% csrf_token %}
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="text-center">
+                 <div>
+                    <button type="submit">Save</button>
+                 </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

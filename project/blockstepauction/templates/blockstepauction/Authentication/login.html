@@ -1,0 +1,19 @@
+{% extends 'blockstepauction/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1 class="display-4 my-4 text-center">Login</h1>
+    <br>
+    <div class="mb-3 my-4 container text-center d-flex justify-content-center">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username..." class="form-control">
+            <br>
+            <input type="password" name="password" placeholder="Password..." class="form-control" >
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+{% endblock %}

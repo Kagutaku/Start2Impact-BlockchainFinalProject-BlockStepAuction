@@ -1,0 +1,24 @@
+{% extends 'blockstepauction/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 class="display-4 my-4 text-center">Open auctions list:</h1>
+
+    <div class="my-4 container">
+        {% for auction in openAuctions %}
+            <article>
+                <h3>{{ auction.title }}</h3>
+                <p>ID code: {{ auction.id }}</p>
+                <p>Starting price: {{ auction.startingPrice }}€</p>
+                <p>Current price: {{ auction.currentPrice }}€</p>
+                <p>Current highest bidder: {{ auction.highestUser }}</p>
+                <p>Total bids made: {{ auction.totalBids }}</p>
+                <p>Created on: {{ auction.creationDate }}</p>
+                <p>Duration: {{ auction.durationDays }} days</p>
+                <p>Ends on: {{ auction.endDate }}</p>
+                <p>Time left to end: {{ auction.timeleft }} </p>
+                <br><br><br>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'blockstepauction/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 class="display-4 my-4 text-center">Your bids:</h1>
+
+    <div class="my-4 container">
+        {% for bid in bids %}
+            <article>
+                <h3>{{ bid.bidCounter }}° bid made on {{ bid.datetime }}</h3>
+                <p>Auction ID code: {{ bid.auctionId }}</p>
+                <p>Auction bid number: {{ bid.bidNumber }}</p>
+                <p>Price before bid: {{ bid.priceBefore }}€</p>
+                <p>Raising: {{ bid.raising }}€</p>
+                <p>Price after bid: {{ bid.priceAfter }}€</p>
+                <br><br><br>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock %}

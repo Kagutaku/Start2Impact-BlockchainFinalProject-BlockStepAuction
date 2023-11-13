@@ -1,0 +1,13 @@
+{% extends 'blockstepauction/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1 class="display-4 my-4 text-center">Your Profile</h1>
+    <br>
+    <h1 class="display-6 my-4 text-center">Hello {{ user.username }}!</h1>
+    <br><br>
+    <h1 class="display-6 my-4 text-center">Your username:  {{ user.username }}</h1>
+    <h1 class="display-6 my-4 text-center">Your email:  {{ user.email }}</h1>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'blockstepauction/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1 class="display-4 my-4 text-center">Dashboard</h1>
+    <br>
+    <hr>
+    <h1 class="display-6 my-4 text-center">Your balance: {{ bidder.balance }} € </h1>
+    <h1 class="display-6 my-4 text-center">Your pending balance: {{ bidder.pendingBalance }} € </h1>
+    <hr>
+    <h1 class="display-6 my-4 text-center">Your total bids: {{ bidder.totalBids }} </h1>
+    <h1 class="display-6 my-4 text-center">Your total auctions won: {{ bidder.totalAuctionsWon }} </h1>
+    <hr>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+*__pycache__/                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+*migrations
+*.pyc
+db.sqlite3
+.vscode/settings.json
+*staticfiles
+env

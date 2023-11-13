@@ -1,0 +1,22 @@
+{% extends 'blockstepauction/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 class="display-4 my-4 text-center">Delete auction</h1>
+
+    <h1 class="display-6 my-4 text-center">Select open auction to delete:</h1>
+    <div class="input-group mb-3 my-4 container text-center d-flex justify-content-center">
+        <form method="post">
+            {% csrf_token %}
+            <label for="auction"></label>
+                <br>
+                <select name="auction" id="auction">
+                    {% for auction in openAuctions %}
+                    <option value="{{ auction.pk }}"> Auction: {{ auction.title }} ending on {{ auction.endDate }} (id: {{ auction.id }})</option>
+                    {% endfor %}
+                </select>
+                <br><br><br>
+            <input type="submit" value="Save">
+        </form>
+    </div>
+{% endblock %}

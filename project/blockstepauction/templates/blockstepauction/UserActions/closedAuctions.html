@@ -1,0 +1,24 @@
+{% extends 'blockstepauction/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 class="display-4 my-4 text-center">Closed auctions list:</h1>
+
+    <div class="my-4 container">
+        {% for auction in closedAuctions %}
+            <article>
+                <h3>{{ auction.title }}</h3>
+                <p>ID code: {{ auction.id }}</p>
+                <p>Starting price: {{ auction.startingPrice }}€</p>
+                <p>Closing price: {{ auction.currentPrice }}€</p>
+                <p>Winner: {{ auction.highestUser }}</p>
+                <p>Total bids made: {{ auction.totalBids }}</p>
+                <p>Created on: {{ auction.creationDate }}</p>
+                <p>Ended on: {{ auction.endDate }}</p>
+                <p>Json report sha256 hash: {{ auction.jsonReportHash }}</p>
+                <p>Sepolia proof tx hash: <a href="https://sepolia.etherscan.io/tx/{{ auction.onchainTxHash }}" target="_blank">{{ auction.onchainTxHash }}</a></p>
+                <br><br><br>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock %}
